@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+
+
+
+
+
+
+        <h3>Jogadores no top 100:</h3>
+        <ul class="list-group mb-4">
+            {% for jogador in Top100 %}
+                <li class="list-group-item">{{ jogador }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Adicionar Jogador:</h3>
+        <form action="{{ url_for('top') }}" method="POST" class="form-inline">
+            <div class="form-group mb-2">
+                <label for="jogador" class="sr-only">Jogador:</label>
+                <input type="text" id="jogador" name="jogador" class="form-control mr-2" placeholder="Nome do jogador">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Entrar</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
